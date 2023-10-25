@@ -1,0 +1,128 @@
+@font-face {
+  font-family: "Curse Casual";
+  src: url("curse-casual.ttf");
+  font-weight: normal;
+  font-style: normal;
+}
+
+body {
+  background-color: black;
+  overflow: hidden;
+}
+
+main::after {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  min-height: 100vh;
+  width: 80vw;
+  background: linear-gradient(-233deg, #000 40%, rgba(0, 0, 0, 0) 65%) no-repeat;
+}
+
+main .personagem {
+  display: none;
+  height: 100vh;
+}
+
+main .personagem.selecionado {
+  display: block;
+}
+
+main .personagem .imagem {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+
+  animation: fadeIn;
+  animation-duration: 2s;
+  animation: fadeBackground;
+  animation-duration: 1.25s;
+}
+
+.conteudo {
+  position: absolute;
+  top: 0;
+  left: 120px;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  min-height: 100vh;
+  max-width: 380px;
+  z-index: 1;
+}
+
+.conteudo .nome-personagem {
+  color: #ffffff;
+  font-size: 50px;
+  font-family: "Curse Casual";
+  font-weight: 400;
+  margin-bottom: 20px;
+
+  animation: fadeInDown;
+  animation-duration: 1.25s;
+}
+
+.conteudo .descricao {
+  color: #ffffff;
+  font-family: "Curse Casual";
+  line-height: 28px;
+  font-size: 25px;
+
+  animation: fadeInLeft;
+  animation-duration: 1.25s;
+}
+
+.conteudo .logo {
+  background-image: url("../imagens/hat-in-time.png");
+  background-size: cover;
+  height: 370px;
+  width: 500px;
+  margin-bottom: 35px;
+
+  animation: fadeIn;
+  animation-duration: 3s;
+}
+
+.botoes {
+  position: fixed;
+  top: 0;
+  right: 0;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  width: 150px;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  background-color: rgba(0, 0, 0, 0.3);
+}
+
+.botoes .botao {
+  border: none;
+  background: #000000;
+  cursor: pointer;
+  border-radius: 50%;
+
+  transition: 0.2s all ease-in-out;
+}
+
+.botoes .botao:hover {
+  transform: scale(1.1)
+}
+
+.botoes .botao.selecionado:hover {
+  transform: scale(1.3)
+}
+
+.botoes .botao img {
+  border-radius: 50%;
+}
+
+.botoes .botao.selecionado {
+  transform: scale(1.2);
+  box-shadow: 0 0 10px #d9d9d9;
+
+  transition: 0.2s all ease-in-out;
+}
